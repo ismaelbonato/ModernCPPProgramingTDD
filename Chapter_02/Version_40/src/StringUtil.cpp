@@ -21,3 +21,4 @@ namespace utils {
       return std::string(1, utils::upper(string.front()));
    }
 }
+

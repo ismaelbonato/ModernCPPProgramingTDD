@@ -1,5 +1,4 @@
-#ifndef Soundex_h
-#define Soundex_h
+#pragma once
 
 #include <unordered_map>
 #include <string>
@@ -77,4 +76,3 @@ private:
         return encoding.length() == MaxCodeLength;
     }
 };
-#endif
