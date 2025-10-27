@@ -1,0 +1,39 @@
+{
+  "name": "Modern C++ TDD Development",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "dev-cpp",
+  "workspaceFolder": "/home/${USERNAME}/workspace",
+  "initializeCommand": "bash setEnv.sh",
+  "shutdownAction": "stopCompose",
+  "updateRemoteUserUID": false,
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": false, 
+        "editor.rulers": [80],
+        "cmake.configureOnOpen": true,
+        "clangd.path": "/usr/bin/clangd-19",
+        "clangd.arguments": [
+          "--background-index",
+          "--clang-tidy",
+          "--completion-style=detailed",
+          "--header-insertion=iwyu",
+          "--compile-commands-dir=${workspaceFolder}/build"
+        ],
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+      },
+      "extensions": [
+        "llvm-vs-code-extensions.vscode-clangd",
+        "ms-vscode.cmake-tools",
+        "vadimcn.vscode-lldb",
+        "matepek.vscode-catch2-test-adapter",
+        "alefragnani.bookmarks",
+        "xaver.clang-format",
+        "streetsidesoftware.code-spell-checker",
+        "jbenden.c-cpp-flylint",
+        "github.copilot",
+        "bierner.markdown-preview-github-styles"
+      ]
+    }
+  }
+}

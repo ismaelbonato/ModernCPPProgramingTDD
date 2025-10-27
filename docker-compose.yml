@@ -1,0 +1,16 @@
+services:
+  dev-cpp:
+    build:
+      context: .
+      dockerfile: dockerfile
+      args:
+        USERNAME: ${USER}
+        UID: ${USER_ID}
+        GID: ${GROUP_ID}
+    container_name: dev-cpp-tdd
+    volumes:
+      - .:/home/${USER}/workspace
+    working_dir: /home/${USER}/workspace
+    command: sleep infinity
+    hostname: tdd
+    restart: "no"  # Don't auto-restart
