@@ -2,16 +2,29 @@
   "name": "Modern C++ TDD Development",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "dev-cpp",
-  "workspaceFolder": "/home/${USERNAME}/workspace",
+  "workspaceFolder": "/home/${localEnv:USER}/workspace",
   "initializeCommand": "bash setEnv.sh",
   "shutdownAction": "stopCompose",
   "updateRemoteUserUID": false,
+  "containerEnv": {
+    "CC": "/usr/bin/gcc-14",
+    "CXX": "/usr/bin/g++-14",
+    "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+  },
+  "features": {},
   "customizations": {
     "vscode": {
       "settings": {
         "editor.formatOnSave": false, 
         "editor.rulers": [80],
         "cmake.configureOnOpen": true,
+        "cmake.generator": "Ninja",
+        "cmake.cmakePath": "/usr/bin/cmake",
+        "C_Cpp.default.compilerPath": "/usr/bin/g++-14",
+        "cmake.configureSettings": {
+          "CMAKE_C_COMPILER": "/usr/bin/gcc-14",
+          "CMAKE_CXX_COMPILER": "/usr/bin/g++-14"
+        },
         "clangd.path": "/usr/bin/clangd-19",
         "clangd.arguments": [
           "--background-index",

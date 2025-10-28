@@ -21,6 +21,9 @@ RUN apt-get update && apt-get install -y \
     clang-tidy-19 \
     libc++-19-dev \
     libc++abi-19-dev \
+    gdb \
+    lldb-19 \
+    valgrind \
     && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100 \
     && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100 \
     && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 100 \
