@@ -20,7 +20,11 @@
           "--header-insertion=iwyu",
           "--compile-commands-dir=${workspaceFolder}/build"
         ],
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "testMate.cpp.test.executables": "**/{build,Build,BUILD}/**/*{Test,test,TEST}*",
+        "testMate.cpp.log.logpanel": true,
+        "testMate.cpp.discovery.loadOnStartup": true,
+        "testMate.cpp.test.workingDirectory": "${absDirpath}"
       },
       "extensions": [
         "llvm-vs-code-extensions.vscode-clangd",
