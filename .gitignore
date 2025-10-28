@@ -6,6 +6,9 @@
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
+# Qt creator
+.qtcreator/
+
 # Obsidian
 # Obsidian config
 .obsidian/
