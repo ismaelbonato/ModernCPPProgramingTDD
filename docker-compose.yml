@@ -13,5 +13,5 @@ services:
       - ~/.ssh:/home/${USER}/.ssh:ro
     working_dir: /home/${USER}/workspace
     command: sleep infinity
-    hostname: tdd
-    restart: "no"  # Don't auto-restart
+    hostname: ModernCppTDD
+    restart: "no"
