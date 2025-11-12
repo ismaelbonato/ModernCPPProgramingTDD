@@ -12,6 +12,9 @@ set(SOURCE_FILES
     src/StringUtil.cpp
 )
 
+# Get the folder name to use in target name
+get_filename_component(FOLDER_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+
 if(BUILD_TESTING)
     # GoogleTest requires at least C++14
     find_package(GTest REQUIRED)
@@ -23,11 +26,11 @@ if(BUILD_TESTING)
         tests/StringUtilTest.cpp
     )
 
-    add_executable(SoundexTest_V40 ${TEST_FILES} ${SOURCE_FILES})
-    target_include_directories(SoundexTest_V40 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
-    target_link_libraries(SoundexTest_V40 GTest::gtest_main pthread)
+    add_executable(SoundexTest_${FOLDER_NAME} ${TEST_FILES} ${SOURCE_FILES})
+    target_include_directories(SoundexTest_${FOLDER_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    target_link_libraries(SoundexTest_${FOLDER_NAME} GTest::gtest_main pthread)
 
 else()
-    add_executable(SoundexApp_V40 ${SOURCE_FILES} main.cpp)
-    target_include_directories(SoundexApp_V40 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    add_executable(SoundexApp ${SOURCE_FILES} main.cpp)
+    target_include_directories(SoundexApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 endif()

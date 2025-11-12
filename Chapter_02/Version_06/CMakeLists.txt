@@ -9,6 +9,9 @@ find_package(GTest REQUIRED)
 
 include_directories(${GTEST_INCLUDE_DIRS})
 
+# Get the folder name to use in target name
+get_filename_component(FOLDER_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+
 # Use GTest::gtest_main to provide the main() function
-add_executable(SoundexTest_V06 SoundexTest.cpp)
-target_link_libraries(SoundexTest_V06 GTest::gtest_main pthread)
+add_executable(SoundexTest_${FOLDER_NAME} SoundexTest.cpp)
+target_link_libraries(SoundexTest_${FOLDER_NAME} GTest::gtest_main pthread)
