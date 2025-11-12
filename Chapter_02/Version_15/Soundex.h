@@ -22,5 +22,6 @@ private:
     std::string zeroPad(const std::string &word) const
     {
         // ...
+        return std::string();
     }
 };

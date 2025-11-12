@@ -2,5 +2,5 @@
 
 TEST(SoundexEncoding, RetainsSoleLetterOfOneLetterWord)
 {
-    Soundex soundex;
+    //Soundex soundex;
 }

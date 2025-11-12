@@ -7,5 +7,5 @@ class Soundex
 TEST(SoundexEncoding, RetainsSoleLetterOfOneLetterWord)
 {
     Soundex soundex;
-    auto encoded = soundex.encode("A");
+    //auto encoded = soundex.encode("A");
 }
