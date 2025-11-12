@@ -11,5 +11,5 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 
 # Use GTest::gtest_main to provide the main() function
-add_executable(SoundexTest SoundexTest.cpp)
-target_link_libraries(SoundexTest GTest::gtest_main pthread)
+add_executable(SoundexTest_V01 SoundexTest.cpp)
+target_link_libraries(SoundexTest_V01 GTest::gtest_main pthread)

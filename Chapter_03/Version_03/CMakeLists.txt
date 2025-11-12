@@ -11,5 +11,5 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 
 # Use GTest::gtest_main to provide the main() function
-add_executable(RetweetCollectionTest RetweetCollectionTest.cpp)
-target_link_libraries(RetweetCollectionTest GTest::gtest_main pthread)
+add_executable(RetweetCollectionTest_V03 RetweetCollectionTest.cpp)
+target_link_libraries(RetweetCollectionTest_V03 GTest::gtest_main pthread)

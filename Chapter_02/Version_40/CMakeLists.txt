@@ -23,11 +23,11 @@ if(BUILD_TESTING)
         tests/StringUtilTest.cpp
     )
 
-    add_executable(SoundexTest ${TEST_FILES} ${SOURCE_FILES})
-    target_include_directories(SoundexTest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
-    target_link_libraries(SoundexTest GTest::gtest_main pthread)
+    add_executable(SoundexTest_V40 ${TEST_FILES} ${SOURCE_FILES})
+    target_include_directories(SoundexTest_V40 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    target_link_libraries(SoundexTest_V40 GTest::gtest_main pthread)
 
 else()
-    add_executable(SoundexApp ${SOURCE_FILES} main.cpp)
-    target_include_directories(SoundexApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    add_executable(SoundexApp_V40 ${SOURCE_FILES} main.cpp)
+    target_include_directories(SoundexApp_V40 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 endif()

@@ -15,5 +15,5 @@ set(SOURCE_FILES
 )
 
 # Use GTest::gtest_main to provide the main() function
-add_executable(SoundexTest ${SOURCE_FILES})
-target_link_libraries(SoundexTest GTest::gtest_main pthread)
+add_executable(SoundexTest_V31 ${SOURCE_FILES})
+target_link_libraries(SoundexTest_V31 GTest::gtest_main pthread)
