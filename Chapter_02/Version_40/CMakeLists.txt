@@ -4,11 +4,10 @@ project(SoundexApp)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-option(BUILD_TESTING "Build tests" OFF)
-
+option(BUILD_TESTING "Build tests" ON)
 
 set(SOURCE_FILES
-    #Soundex.cpp
+    src/Soundex.cpp
     src/CharUtil.cpp
     src/StringUtil.cpp
 )
@@ -25,11 +24,10 @@ if(BUILD_TESTING)
     )
 
     add_executable(SoundexTest ${TEST_FILES} ${SOURCE_FILES})
-    target_include_directories(SoundexTest PRIVATE ${CMAKE_SOURCE_DIR}/src)
+    target_include_directories(SoundexTest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
     target_link_libraries(SoundexTest GTest::gtest_main pthread)
 
 else()
     add_executable(SoundexApp ${SOURCE_FILES} main.cpp)
-    target_include_directories(SoundexApp PRIVATE ${CMAKE_SOURCE_DIR}/src)
+    target_include_directories(SoundexApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 endif()
-
