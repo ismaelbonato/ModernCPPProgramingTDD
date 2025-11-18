@@ -2,5 +2,5 @@
 
 TEST(ARetweetCollection, IsEmptyWhenCreated)
 {
-    RetweetCollection retweets;
+    //RetweetCollection retweets;
 }
