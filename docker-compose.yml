@@ -2,7 +2,7 @@ services:
   dev-cpp:
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
       args:
         USERNAME: ${USER}
         UID: ${USER_ID}
