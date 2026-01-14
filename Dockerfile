@@ -26,6 +26,8 @@ RUN apt-get update && apt-get install -y \
     valgrind \
     vim \
     nano \
+    lcov \
+    gcovr \
     && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100 \
     && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100 \
     && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 100 \
@@ -33,6 +35,7 @@ RUN apt-get update && apt-get install -y \
     && update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-19 100 \
     && update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-19 100 \
     && update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-19 100 \
+    && update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-14 100 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Download and install Google Test from source
