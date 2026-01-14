@@ -37,7 +37,18 @@
         "testMate.cpp.test.executables": "**/{build,Build,BUILD}/**/*{Test,test,TEST}*",
         "testMate.cpp.log.logpanel": true,
         "testMate.cpp.discovery.loadOnStartup": true,
-        "testMate.cpp.test.workingDirectory": "${absDirpath}"
+        "testMate.cpp.test.workingDirectory": "${absDirpath}",
+        "coverage-gutters.coverageFileNames": [
+          "coverage.lcov",
+          "lcov.info",
+          "coverage.info",
+          "cov.xml",
+          "coverage.xml"
+        ],
+        "coverage-gutters.showLineCoverage": true,
+        "coverage-gutters.showRulerCoverage": true,
+        "coverage-gutters.showGutterCoverage": true,
+        "coverage-gutters.coverageBaseDir": ""
       },
       "extensions": [
         "llvm-vs-code-extensions.vscode-clangd",
@@ -48,7 +59,8 @@
         "xaver.clang-format",
         "streetsidesoftware.code-spell-checker",
         "github.copilot",
-        "bierner.markdown-preview-github-styles"
+        "bierner.markdown-preview-github-styles",
+        "ryanluker.vscode-coverage-gutters"
       ]
     }
   }
