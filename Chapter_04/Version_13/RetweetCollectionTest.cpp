@@ -71,8 +71,13 @@ TEST_F(ARetweetCollection, IgnoresDuplicateTweetAdded)
     ASSERT_THAT(collection.size(), Eq(1u));
 }
 
-TEST(ATweet, RequiresUserToStartWithAtSign)
+TEST(ATweet, RequiresUserNameToStartWithAtSign)
 {
     std::string invalidUser("notStartingWith@");
-    ASSERT_ANY_THROW(Tweet tweet("msg", invalidUser));
+    try {
+        Tweet tweet("msg", invalidUser);
+        FAIL();
+    } catch (const InvalidUserException &expected) {
+        ASSERT_STREQ("notStartingWith@", expected.what());
+    }
 }
