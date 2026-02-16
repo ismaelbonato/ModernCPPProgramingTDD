@@ -17,6 +17,8 @@ target_include_directories(SoundexApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # Get the folder name to use in target name
 get_filename_component(FOLDER_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+get_filename_component(CHAPTER_NAME ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
+get_filename_component(CHAPTER_NAME ${CHAPTER_NAME} NAME)
 
 if(BUILD_TESTING)
     # GoogleTest requires at least C++14
@@ -29,17 +31,17 @@ if(BUILD_TESTING)
         tests/StringUtilTest.cpp
     )
 
-    add_executable(SoundexTest_${FOLDER_NAME} ${TEST_FILES} ${SOURCE_FILES})
-    target_include_directories(SoundexTest_${FOLDER_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
-    target_link_libraries(SoundexTest_${FOLDER_NAME} GTest::gtest_main pthread)
+    add_executable(${CHAPTER_NAME}_${FOLDER_NAME}_Test ${TEST_FILES} ${SOURCE_FILES})
+    target_include_directories(${CHAPTER_NAME}_${FOLDER_NAME}_Test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    target_link_libraries(${CHAPTER_NAME}_${FOLDER_NAME}_Test GTest::gtest_main pthread)
 
     enable_testing()
-    add_test(NAME SoundexTests COMMAND SoundexTest_${FOLDER_NAME})
+    add_test(NAME SoundexTests COMMAND ${CHAPTER_NAME}_${FOLDER_NAME}_Test)
 
     if(CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang") # gcovr -r .. --html -o coverage.html
         message(STATUS "Building test target with code coverage flags")
-        target_compile_options(SoundexTest_${FOLDER_NAME} PRIVATE -fprofile-arcs -ftest-coverage --coverage -O0 -g)
-        target_link_options(SoundexTest_${FOLDER_NAME} PRIVATE -fprofile-arcs -ftest-coverage --coverage)
+        target_compile_options(${CHAPTER_NAME}_${FOLDER_NAME}_Test PRIVATE -fprofile-arcs -ftest-coverage --coverage -O0 -g)
+        target_link_options(${CHAPTER_NAME}_${FOLDER_NAME}_Test PRIVATE -fprofile-arcs -ftest-coverage --coverage)
     endif()
 endif()
 
