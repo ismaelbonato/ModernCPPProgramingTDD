@@ -2,9 +2,7 @@
 
 CurlHttp::~CurlHttp() {}
 
-void CurlHttp::initialize()
-{
-}
+void CurlHttp::initialize() {}
 
 std::string CurlHttp::get(const std::string &url) const
 {

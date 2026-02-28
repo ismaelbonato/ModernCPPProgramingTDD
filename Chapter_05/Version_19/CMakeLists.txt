@@ -16,7 +16,6 @@ get_filename_component(CHAPTER_NAME ${CHAPTER_NAME} NAME)
 
 set(SOURCES 
     PlaceDescriptionServiceTest.cpp
-    PlaceDescriptionService.cpp
     AddressExtractor.cpp
     CurlHttp.cpp
     HttpFactory.cpp
