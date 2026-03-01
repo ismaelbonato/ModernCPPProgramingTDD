@@ -25,6 +25,7 @@
           "CMAKE_C_COMPILER": "/usr/bin/gcc-14",
           "CMAKE_CXX_COMPILER": "/usr/bin/g++-14"
         },
+        "C_Cpp.intelliSenseEngine": "disabled",
         "clangd.path": "/usr/bin/clangd-19",
         "clangd.arguments": [
           "--background-index",
