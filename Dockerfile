@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y \
     nano \
     lcov \
     gcovr \
+    libboost-date-time-dev \
     && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100 \
     && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100 \
     && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 100 \
