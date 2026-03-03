@@ -11,8 +11,8 @@ PlaceDescriptionService::PlaceDescriptionService(std::shared_ptr<Http> http)
     : http(http)
 {}
 
-std::string PlaceDescriptionService::summaryDescription(
-    const std::string &latitude, const std::string &longitude) const
+std::string PlaceDescriptionService::summaryDescription(const std::string &latitude,
+                                                   const std::string &longitude) const
 {
     std::string server{"http://open.mapquestapi.com/"};
     std::string document{"nominatim/v1/reverse"};
@@ -33,14 +33,14 @@ std::string PlaceDescriptionService::summaryDescription(
     return extractor.summaryDescription(response);
 }
 
-std::string PlaceDescriptionService::get(const std::string& url) const 
+std::string PlaceDescriptionService::get(const std::string &url) const
 {
     auto http = httpService();
     http->initialize();
     return http->get(url);
 }
 
-std::shared_ptr<Http> PlaceDescriptionService::httpService() const 
+std::shared_ptr<Http> PlaceDescriptionService::httpService() const
 {
     return http;
 }
