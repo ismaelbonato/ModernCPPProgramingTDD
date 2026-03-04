@@ -31,7 +31,7 @@ void Portfolio::Sell(const std::string &symbol,
     if (shareCount > ShareCount(symbol))
         throw InvalidSellException();
     if (0 == shareCount)
-        throw SellCountCannotBeZeroException();
+        throw ShareCountCannotBeZeroException();
     holdings[symbol] = ShareCount(symbol) - shareCount;
     purchases.push_back(PurchaseRecord(-shareCount, transactionDate));
 }

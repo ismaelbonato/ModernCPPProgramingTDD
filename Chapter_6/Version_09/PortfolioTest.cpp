@@ -82,7 +82,7 @@ TEST_F(APortfolio, ThrowsOnPurchaseOfZeroShares)
 
 TEST_F(APortfolio, ThrowsOnSellOfZeroShares)
 {
-    ASSERT_THROW(Sell(IBM, 0), SellCountCannotBeZeroException);
+    ASSERT_THROW(Sell(IBM, 0), ShareCountCannotBeZeroException);
 }
 
 TEST_F(APortfolio, AnswersShareCountForAppropriateSymbol)

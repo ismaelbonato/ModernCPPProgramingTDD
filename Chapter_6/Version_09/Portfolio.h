@@ -9,13 +9,8 @@
 
 class InvalidSellException : public std::exception
 {};
-class InvalidPurchaseException : public std::exception
-{};
 
 class ShareCountCannotBeZeroException : public std::exception
-{};
-
-class SellCountCannotBeZeroException : public std::exception
 {};
 
 struct PurchaseRecord
